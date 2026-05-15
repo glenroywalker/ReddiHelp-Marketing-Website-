@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReddiHelp | Emergency Coordination Platform</title>
+    <meta
+      name="description"
+      content="ReddiHelp is a disaster response coordination platform for reporting incidents, dispatching volunteers, tracking resources, and keeping coordinators informed in real time."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="ReddiHelp home">
+        <span class="brand-mark">R</span>
+        <span>ReddiHelp</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#about">About</a>
+        <a href="#workflow">How it Works</a>
+        <a href="#roles">Users</a>
+        <a href="#why">Why Use It</a>
+        <a href="#build">Build</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="eyebrow">Disaster response coordination for Jamaica</p>
+          <h1 id="hero-title">ReddiHelp</h1>
+          <p class="hero-lede">
+            A full-stack emergency platform that turns scattered calls, social posts, and paper records into a single live picture of who needs help, where resources are, and who is responding.
+          </p>
+          <div class="hero-actions" aria-label="Primary page links">
+            <a class="button button-primary" href="#workflow">See the workflow</a>
+            <a class="button button-secondary" href="#screens">View the product</a>
+          </div>
+          <dl class="hero-stats" aria-label="Project highlights">
+            <div>
+              <dt>4 roles</dt>
+              <dd>Victim, volunteer, responder, coordinator</dd>
+            </div>
+            <div>
+              <dt>Live updates</dt>
+              <dd>Socket.io status and dispatch events</dd>
+            </div>
+            <div>
+              <dt>Offline-first</dt>
+              <dd>Queued mobile reports sync when service returns</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section intro-band" id="about">
+        <div class="container split">
+          <div>
+            <p class="section-kicker">The problem</p>
+            <h2>Emergency help often gets slowed down by fragmented information.</h2>
+          </div>
+          <div class="copy-block">
+            <p>
+              During hurricanes, floods, earthquakes, fires, and medical emergencies, people may report needs through hotlines, social media, direct messages, or paper logs. Coordinators then have to guess where the worst needs are, which volunteers are available, and which supplies are already deployed.
+            </p>
+            <p>
+              ReddiHelp solves that by connecting incident reporting, GIS mapping, resource tracking, volunteer dispatch, alerts, and analytics in one coordinated system.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="screens">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">What it does</p>
+            <h2>One platform for reporting, dispatch, and coordination.</h2>
+            <p>
+              The mobile app supports field users under pressure, while the web dashboard gives coordinators a command center for the whole response.
+            </p>
+          </div>
+
+          <div class="product-grid">
+            <figure class="product-shot reveal">
+              <img src="assets/screenshots/page-30-image-1.png" alt="ReddiHelp mobile map with incident marker and SOS control">
+              <figcaption>Victims can share a GPS-tagged request quickly from the mobile map.</figcaption>
+            </figure>
+            <figure class="product-shot reveal">
+              <img src="assets/screenshots/page-31-image-2.png" alt="Assigned incidents screen showing a volunteer task card">
+              <figcaption>Volunteers receive nearby assignments with incident type, severity, and location.</figcaption>
+            </figure>
+            <figure class="product-shot reveal">
+              <img src="assets/screenshots/page-35-image-2.png" alt="Coordinator web dashboard incident queue">
+              <figcaption>Coordinators track queues, dispatch teams, and monitor status from the dashboard.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workflow-section" id="workflow">
+        <div class="container">
+          <div class="section-heading compact">
+            <p class="section-kicker">How it works</p>
+            <h2>From distress report to resolved incident.</h2>
+          </div>
+
+          <ol class="workflow-list">
+            <li class="reveal">
+              <span class="step-number">01</span>
+              <h3>Report</h3>
+              <p>A victim submits an SOS or incident report with location, category, severity, notes, and optional media.</p>
+            </li>
+            <li class="reveal">
+              <span class="step-number">02</span>
+              <h3>Map</h3>
+              <p>The backend stores the event with PostGIS and broadcasts live updates to mobile clients and the dashboard.</p>
+            </li>
+            <li class="reveal">
+              <span class="step-number">03</span>
+              <h3>Dispatch</h3>
+              <p>Coordinators match nearby volunteers or responders by availability, distance, role, and relevant resources.</p>
+            </li>
+            <li class="reveal">
+              <span class="step-number">04</span>
+              <h3>Respond</h3>
+              <p>Field users accept tasks, navigate to the scene, update progress, and communicate through real-time channels.</p>
+            </li>
+            <li class="reveal">
+              <span class="step-number">05</span>
+              <h3>Analyze</h3>
+              <p>Reports and dashboards help teams understand response trends, resource use, and remaining gaps.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section roles-section" id="roles">
+        <div class="container roles-layout">
+          <div>
+            <p class="section-kicker">How it is used</p>
+            <h2>Every user sees the tools they need.</h2>
+            <p>
+              ReddiHelp uses role-based access control so each group gets a focused workflow instead of a one-size-fits-all interface.
+            </p>
+            <div class="role-tabs" role="tablist" aria-label="ReddiHelp user roles">
+              <button class="role-tab is-active" type="button" role="tab" aria-selected="true" data-role="victim">Victim</button>
+              <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="volunteer">Volunteer</button>
+              <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="responder">Responder</button>
+              <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="coordinator">Coordinator</button>
+            </div>
+            <article class="role-panel" data-role-panel>
+              <h3>Victim</h3>
+              <p>Requests urgent help from a simple mobile interface, shares current location, and tracks whether a report has been received or assigned.</p>
+              <ul>
+                <li>Fast SOS and incident submission</li>
+                <li>Offline queue for poor connectivity</li>
+                <li>Status updates as help is coordinated</li>
+              </ul>
+            </article>
+          </div>
+          <figure class="wide-shot reveal">
+            <img src="assets/screenshots/page-34-image-2.png" alt="Coordinator mobile dashboard showing incident, volunteer, responder, and resource counts">
+          </figure>
+        </div>
+      </section>
+
+      <section class="section build-section" id="build">
+        <div class="container split">
+          <div>
+            <p class="section-kicker">How it is built</p>
+            <h2>A connected mobile, web, and backend system.</h2>
+            <p>
+              The project combines Flutter, React, Node.js, PostgreSQL, PostGIS, Socket.io, Firebase services, map layers, and deployment-ready environment configuration.
+            </p>
+          </div>
+          <div class="architecture-panel reveal">
+            <img src="assets/screenshots/page-25-image-1.png" alt="Simplified ReddiHelp architecture showing mobile app, web dashboard, backend API, and database">
+          </div>
+        </div>
+
+        <div class="container capability-grid">
+          <article class="capability-card reveal">
+            <h3>Mobile field app</h3>
+            <p>Flutter screens cover incident reporting, maps, preparedness guides, volunteer tasks, responder views, broadcast alerts, and accessibility settings.</p>
+          </article>
+          <article class="capability-card reveal">
+            <h3>Coordinator dashboard</h3>
+            <p>React and Vite power a web command center for incidents, resources, volunteers, broadcasts, reports, analytics, and public status.</p>
+          </article>
+          <article class="capability-card reveal">
+            <h3>Real-time backend</h3>
+            <p>Node.js and Express expose REST APIs, handle authentication, store geospatial data, stream WebSocket events, and manage notifications.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section why-section" id="why">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Why use it</p>
+            <h2>ReddiHelp makes scarce emergency resources easier to see, assign, and account for.</h2>
+          </div>
+          <div class="value-grid">
+            <article class="value-card reveal">
+              <h3>Faster response</h3>
+              <p>GPS-tagged reports and live dispatch reduce the time spent locating victims and manually relaying updates.</p>
+            </article>
+            <article class="value-card reveal">
+              <h3>Better resource use</h3>
+              <p>Teams can see available supplies, open needs, and active deployments before sending help to the wrong place.</p>
+            </article>
+            <article class="value-card reveal">
+              <h3>Clear accountability</h3>
+              <p>Incident status, assignments, history, and reports create a shared record from first report to resolution.</p>
+            </article>
+            <article class="value-card reveal">
+              <h3>More equitable coverage</h3>
+              <p>A centralized map helps coordinators spot underserved areas and support vulnerable communities during a crisis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof-section">
+        <div class="container proof-layout">
+          <figure class="wide-shot dark-shot reveal">
+            <img src="assets/screenshots/page-35-image-1.png" alt="ReddiHelp coordinator analytics dashboard">
+          </figure>
+          <div>
+            <p class="section-kicker">What was accomplished</p>
+            <h2>Implemented and tested around real response scenarios.</h2>
+            <ul class="proof-list">
+              <li>Incident reports can be created, assigned, updated, and resolved.</li>
+              <li>WebSocket updates appear on other clients without manual refresh.</li>
+              <li>Volunteers can manage profile skills, availability, assignments, and achievements.</li>
+              <li>Coordinators can generate analytics and export reports for review.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section future-section">
+        <div class="container future-layout">
+          <div>
+            <p class="section-kicker">What comes next</p>
+            <h2>Ready for smarter forecasting and larger-scale operations.</h2>
+          </div>
+          <div class="future-items">
+            <p><strong>Predictive analytics:</strong> Forecast incident growth and resource depletion from historical data.</p>
+            <p><strong>Enhanced maps:</strong> Add weather, traffic, demographics, and operational overlays for richer decisions.</p>
+            <p><strong>Intelligent dispatch:</strong> Refine automated matching with confidence scoring and decision support.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <div>
+          <a class="brand footer-brand" href="#top">
+            <span class="brand-mark">R</span>
+            <span>ReddiHelp</span>
+          </a>
+          <p>Emergency Coordination Platform for COMP3901, The University of the West Indies, Mona.</p>
+        </div>
+        <p class="team-line">
+          Matthew Cross, Stephen-Jon Dixon, Rosahane Roach, Glenroy Walker
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
